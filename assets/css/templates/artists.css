@@ -1,0 +1,24 @@
+.artists-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.artists-list a {
+    border-bottom: solid 2px var(--main);
+    padding: 0 var(--margin);
+    height: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artists-list a:last-child{
+    flex-grow: 2;
+    align-items: flex-start;
+}
+.artists-list a:last-child li h2 { margin-top: 15px;}
+.artists-list a:hover{background-color: var(--highlight);}

@@ -1,0 +1,4 @@
+.flex-layout a {
+    min-height: 590px;
+    height: fit-content;
+}

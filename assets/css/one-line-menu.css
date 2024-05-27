@@ -1,0 +1,11 @@
+.main-container{
+    grid-template-rows: 50px auto;
+}
+
+.content{min-height: calc(100vh - 50px);}
+
+/* mobiles */
+@media screen and (max-width: 805px) {
+    .content{min-height: calc(100vh - 85px);}
+    .main-container.open {grid-template-rows: 50px 35px 250px auto; }
+}

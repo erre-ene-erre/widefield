@@ -1,0 +1,33 @@
+.main-container {
+    height: 100vh;
+    grid-template-columns: 50px calc(100vw - 50px);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "title cover";
+}
+
+.cover{overflow: hidden; position: relative;}
+.cover img{
+    width: 100%;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}
+
+@media screen and (max-width: 805px) {
+    .main-container{
+        grid-template-columns: auto;
+        grid-template-rows: 50px auto;
+        grid-template-areas: 
+        "title"
+        "cover";
+    }
+    .title{border-bottom: none;}
+    .cover img{
+        width: auto;
+        height: 150%;
+    }
+}
