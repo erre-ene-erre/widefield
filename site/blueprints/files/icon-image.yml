@@ -1,0 +1,11 @@
+title: Icon Image
+
+accept:
+  mime: image/*
+  maxsize: 90000000
+
+fields:
+  alt:
+    label: alt text
+    type: textarea
+    help: description for screen readers (accessibility)

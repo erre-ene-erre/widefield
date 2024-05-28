@@ -1,0 +1,40 @@
+Title: News
+
+sections:
+  content:
+    type: fields
+    fields:
+      news:
+        type: structure
+        sortBy: date desc
+        columns:
+          title:
+              width: 1/4
+          content:
+              width: 1/2
+          image:
+              width: 1/4
+        fields:
+          date: 
+            type: date
+            default: today
+            display: DD.MM.YYYY
+            disabled: true
+          title:
+            type: writer
+            toolbar:
+             inline: false
+            headings:
+              - 2
+              - 3
+          content:
+            type: writer
+            inline: true
+            toolbar:
+             inline: false
+            headings: 
+              - 3
+          image:
+            type: files
+            template: media-file
+            max: 1

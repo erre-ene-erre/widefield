@@ -1,0 +1,33 @@
+Title: Simone Holliger
+
+----
+
+Edition: 1
+
+----
+
+Artists: artists/simone-holliger
+
+----
+
+Header: <h2>SIMONE HOLLIGER </h2><p>Breaking for something to happen, 2017<br>Double sided silk printing editions, 50 x 70 cm</p>
+
+----
+
+Issale: false
+
+----
+
+Price: 
+
+----
+
+Eventinfo: <p>Material: silkscreen print, one color<br>Cirus recycled 120 gr.<br>Dimensions: 50 x 70 cm<br>Edition: 100, stamped<br>Launch at Oraibi + Beckbooks, Geneva, Switzerland, 2017</p>
+
+----
+
+Artist: artists/simone-holliger
+
+----
+
+Uuid: n3m8Ekm3AWEHVo7z

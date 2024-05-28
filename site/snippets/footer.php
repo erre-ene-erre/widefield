@@ -1,0 +1,24 @@
+</main>
+</section>
+
+<footer>
+    <script src="https://unpkg.com/unlazy@0.11.2/dist/unlazy.iife.js"></script>
+    <?= js('/assets/js/main.js') ?>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" ></script>
+    <script>
+    if(newsButton){
+        if (!Cookies.get('alert')) { setTimeout(function(){
+            //document.querySelector('.news-container').style.display = 'block';
+            newsContainer.classList.add('shown');
+            // $('.popup-overlay').css('display','flex');
+            Cookies.set('alert', true, { expires: 1 });
+        }, 2000);
+        }
+    newsButton.addEventListener('click', () =>{closeElement(newsContainer);});
+    }
+        // Documentation at https://github.com/js-cookie/js-cookie
+    </script> -->
+    <?= js('@auto') ?>
+</footer>   
+</body>
+</html>

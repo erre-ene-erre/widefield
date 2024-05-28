@@ -1,0 +1,7 @@
+Title: Artists
+
+sections:
+  artists:
+    type: pages
+    template: gral-info
+    image: false

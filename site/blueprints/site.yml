@@ -1,5 +1,44 @@
 title: Site
 
-sections:
-  pages:
-    type: pages
+columns:
+  - width: 1/2
+    sections:
+      information:
+        type: fields
+        fields:
+          metadescription:
+            label: Meta Description
+            type: textarea
+            buttons: false
+            help: This description is what appears on Google search.
+          favicon:
+            label: Tab Icon
+            type: files
+            size: tiny
+            uploads:
+              parent: site
+              template: icon-image
+            max: 1
+            layout: cards
+            image:
+              back: white
+          cover:
+            label: Home Page Cover
+            type: files
+            uploads:
+              parent: site
+              template: gallery-image
+            max: 1
+            layout: cards
+  - width: 1/2
+    sections:
+      projects:
+        type: pages
+        template: projects
+        image: false
+      gral-info:
+        label: General Info
+        type: pages
+        status: listed
+        templatesIgnore: projects
+        image: false

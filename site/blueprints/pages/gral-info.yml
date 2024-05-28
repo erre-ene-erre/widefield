@@ -1,0 +1,24 @@
+Title: General Info
+
+columns:
+  - width: 1/2
+    sections:
+      gallery:
+        label: Media Files
+        type: files
+        template: media-file
+        layout: cards
+  - width: 1/2
+    sticky: true
+    sections:
+      content:
+        type: fields
+        fields:
+          info:
+            label: Text Content
+            type: writer
+            toolbar:
+             inline: false
+            headings:
+              - 2
+              - 3

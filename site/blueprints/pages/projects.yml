@@ -1,0 +1,8 @@
+Title: Projects
+
+sections:
+  projects:
+    type: pages
+    template: project
+    layout: cardlets
+    info: " {{ page.edition }}"

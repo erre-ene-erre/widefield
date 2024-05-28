@@ -1,0 +1,60 @@
+Title: Project
+
+columns:
+  - width: 1/2
+    sticky: true
+    sections:
+      gallery:
+        label: Media Files
+        type: files
+        template: media-file
+        layout: cards
+  - width: 1/2
+    sections:
+      gralinfo:
+        type: fields
+        fields:
+          edition:
+            type: number
+            label: Edition Number
+            width: 1/3
+            help: optional
+          artists:
+            width: 2/3
+            type: multiselect
+            options: query
+            query: 
+              fetch: site.find('artists').children
+              text: "{{ page.title }}"
+              # value: "{{ page.title }}"
+          header:
+            type: writer
+            toolbar:
+              inline: false
+            nodes:
+              - heading
+              - quote
+            headings:
+              - 2
+            help: The Title that appears under each image
+          eventinfo:
+            label: Event Info
+            type: writer
+            toolbar:
+              inline: false
+            headings:
+              - 2
+              - 3
+          issale:
+            label: Add to the shop?
+            width: 1/2
+            type: toggle
+            text:
+              - "no"
+              - "yes"
+          price:
+            width: 1/2
+            type: number
+            after: CHF
+            when: 
+              issale: true
