@@ -1,5 +1,5 @@
-</main>
 </section>
+</main>
 
 <footer>
     <script src="https://unpkg.com/unlazy@0.11.2/dist/unlazy.iife.js"></script>

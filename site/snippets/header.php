@@ -30,4 +30,6 @@
 </head>
 <body>
     <main class="main-container <?= str_replace(' ', '-', $page -> template()) ?>">
-    <section class="content <?= str_replace(' ', '-', $page -> template()) ?>">
+
+    <?php snippet('main-nav') ?>
+    <section class='content <?= str_replace(' ', '-', $page -> template()) ?>'>

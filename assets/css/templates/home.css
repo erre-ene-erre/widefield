@@ -1,12 +1,10 @@
 .main-container {
-    height: 100vh;
-    grid-template-columns: 50px calc(100vw - 50px);
     grid-template-rows: auto;
     grid-template-areas:
         "title cover";
 }
 
-.cover{overflow: hidden; position: relative;}
+.cover{ grid-area: cover; overflow: hidden; position: relative;}
 .cover img{
     width: 100%;
     position: absolute;
@@ -25,7 +23,7 @@
         "title"
         "cover";
     }
-    .title{border-bottom: none;}
+    .title{border-left: none;}
     .cover img{
         width: auto;
         height: 150%;

@@ -14,6 +14,9 @@ columns:
       content:
         type: fields
         fields:
+          header:
+            type: text
+            help: the text to appear in the menu (if you want ti different form the page)
           info:
             label: Text Content
             type: writer

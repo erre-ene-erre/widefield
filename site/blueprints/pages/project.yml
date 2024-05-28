@@ -36,6 +36,7 @@ columns:
               - quote
             headings:
               - 2
+              - 3
             help: The Title that appears under each image
           eventinfo:
             label: Event Info
