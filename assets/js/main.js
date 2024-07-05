@@ -56,12 +56,49 @@ function showMenu() {
 
 window.addEventListener('scroll', debounce(showMenu));
 
+// let headerMenu = document.querySelector('.header');
+// if (mobileSize.matches) {
+//     let leftHeader = document.querySelector('.selection.left');
+//     let centerHeader = document.querySelector('.selection.center');
+//     moveEnd(centerHeader, leftHeader);
+//     // move menu on scroll
+//     let lastScrollTop = window.scrollY || document.documentElement.scrollTop;;
+//     window.onscroll = () => {
+//         let scrollTop = window.scrollY || document.documentElement.scrollTop;
+//         if (scrollTop > lastScrollTop && lastScrollTop > 0) {
+//             headerMenu.style.top = '-35%'
+//         } else if (scrollTop < lastScrollTop || lastScrollTop == -1) {
+//             headerMenu.style.top = '0'
+//         }
+//         lastScrollTop = scrollTop;
+//     }
+//     //mobile grid size
+//     if (document.querySelector('.grid')) {
+//         let icons = document.querySelectorAll(".grid-item img");
+//         icons.forEach(icon => {
+//             let width = icon.style.width;
+//             let mobileWidth = parseInt(width) * 1.5;
+//             icon.style.width = `${mobileWidth}%`;
+//         });
+//     }
+// }
+
+//read more
+let readMore = document.querySelector('.read-more');
+let moreInfo = document.querySelector('.more-info');
+
+if(readMore){
+readMore.addEventListener('click', () => {
+    moreInfo.classList.toggle('visible');
+    readMore.innerText = moreInfo.classList.contains('visible') ? '(Close)' : '(Read More)';
+});
+}
+
 // Close NEWS
 let newsContainer = document.querySelector('.news-container');
 let newsButton = document.querySelector('.news-container .button');
 
-
-function closeElement(element) { element.classList.remove('shown'); }
+function closeElement(element) { element.classList.remove('shown');}
 
 // GALLERY BUTTONS
 

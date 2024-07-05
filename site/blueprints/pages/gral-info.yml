@@ -16,12 +16,29 @@ columns:
         fields:
           header:
             type: text
-            help: the text to appear in the menu (if you want ti different form the page)
+            help: the text to appear in the menu (if you want it different form the page)
           info:
             label: Text Content
             type: writer
             toolbar:
              inline: false
+            headings:
+              - 2
+              - 3
+          moreinfo:
+            label: Extra Information
+            help: Text to appear only after the "read more" button is pressed
+            type: writer
+            toolbar:
+              inline: false
+            headings:
+              - 2
+              - 3
+          textbottom:
+            label: Text Bottom
+            type: writer
+            toolbar:
+              inline: false
             headings:
               - 2
               - 3

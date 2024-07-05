@@ -25,5 +25,21 @@ return [
             ]
         ]
     ],
+    'routes' => [
+      [
+        'pattern' => '(:any)',
+        'action' => function($id) {
+          if($id != 'artists'){
+            $page = page($id);
+          } else {$page = '';}
+          if ($page && $page->hasListedChildren()) {
+            if ($firstChild = $page->children()->listed()->first()) {
+              return $firstChild->go();
+            }
+          }
+          $this->next();
+        }
+      ]
+    ]
 ];
 ?>

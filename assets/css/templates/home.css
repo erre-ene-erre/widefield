@@ -4,8 +4,8 @@
         "title cover";
 }
 
-.cover{ grid-area: cover; overflow: hidden; position: relative;}
-.cover img{
+.content.home{ grid-area: cover; overflow: hidden; position: relative;}
+.content.home img{
     width: 100%;
     position: absolute;
     top: -9999px;
@@ -23,8 +23,9 @@
         "title"
         "cover";
     }
+    .mobile-menu-button {display: none;}
     .title{border-left: none;}
-    .cover img{
+    .content.home img{
         width: auto;
         height: 150%;
     }

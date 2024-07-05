@@ -10,7 +10,7 @@ sections:
         columns:
           title:
               width: 1/4
-          content:
+          info:
               width: 1/2
           image:
               width: 1/4
@@ -19,15 +19,11 @@ sections:
             type: date
             default: today
             display: DD.MM.YYYY
-            disabled: true
+            required: true
           title:
-            type: writer
-            toolbar:
-             inline: false
-            headings:
-              - 2
-              - 3
-          content:
+            type: text
+          info:
+            label: Content
             type: writer
             inline: true
             toolbar:

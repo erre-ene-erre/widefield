@@ -3,6 +3,9 @@
     <a href='<?= page('home') -> url() ?>'><h1><?= $site -> title() ?></h1></a>
 </div>
 
+<div class="mobile-menu-button">
+    <h2>MENU</h2>
+</div>
 <?php if(!$page -> isHomePage()): ?>
     <section class="main menu-container">
     <ul class="main-menu menu">

@@ -4,6 +4,23 @@ columns:
   - width: 1/2
     sticky: true
     sections:
+      header:
+        type: fields
+        fields:
+          header:
+            type: writer
+            toolbar:
+              inline: false
+            marks:
+              - bold
+              - italic
+            nodes:
+              - heading
+              - quote
+            headings:
+              - 2
+              - 3
+            help: The Title that appears in the projects list
       gallery:
         label: Media Files
         type: files
@@ -26,20 +43,26 @@ columns:
             query: 
               fetch: site.find('artists').children
               text: "{{ page.title }}"
-              # value: "{{ page.title }}"
-          header:
+              value: "{{ page.title }}"
+          eventinfo:
+            label: Text Top
             type: writer
             toolbar:
               inline: false
-            nodes:
-              - heading
-              - quote
             headings:
               - 2
               - 3
-            help: The Title that appears under each image
-          eventinfo:
-            label: Event Info
+          moreinfo:
+            label: Extra Information
+            help: Text to appear only after the "read more" button is pressed
+            type: writer
+            toolbar:
+              inline: false
+            headings:
+              - 2
+              - 3
+          textbottom:
+            label: Text Bottom
             type: writer
             toolbar:
               inline: false

@@ -4,4 +4,5 @@ sections:
   artists:
     type: pages
     template: gral-info
+    sortBy: title asc
     image: false

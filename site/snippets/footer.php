@@ -2,9 +2,9 @@
 </main>
 
 <footer>
-    <script src="https://unpkg.com/unlazy@0.11.2/dist/unlazy.iife.js"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.iife.js" defer init></script>
     <?= js('/assets/js/main.js') ?>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" ></script>
     <script>
     if(newsButton){
         if (!Cookies.get('alert')) { setTimeout(function(){
@@ -17,7 +17,7 @@
     newsButton.addEventListener('click', () =>{closeElement(newsContainer);});
     }
         // Documentation at https://github.com/js-cookie/js-cookie
-    </script> -->
+    </script>
     <?= js('@auto') ?>
 </footer>   
 </body>

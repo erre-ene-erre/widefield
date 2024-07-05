@@ -29,6 +29,7 @@
     <?= css('@auto') ?>
 </head>
 <body>
+    <?php snippet('news-post-it')?>
     <main class="main-container <?= str_replace(' ', '-', $page -> template()) ?>">
 
     <?php snippet('main-nav') ?>
