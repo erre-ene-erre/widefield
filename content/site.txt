@@ -11,3 +11,7 @@ Favicon: - file://LUslM7pkE3F11FU7
 ----
 
 Cover: - file://wLJR9qCON7OiSNk1
+
+----
+
+Header: <h2>TILO&amp;TONI </h2><h3>Tilo und Toni grüssen aus Oberkirch und Lützellinden, 2017</h3><h2>DANIEL V. KELLER </h2><h3>Caressing Glossy Surfaces, 2018</h3><p>Double sided silk printing editions, 50 x 70 cm</p>
