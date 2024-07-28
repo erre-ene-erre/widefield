@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Templates</title></head>
+
+    <body>
+        <div id="snipcart-templates">
+            <item-line> 
+                <div class='snipcart-item-line__container'>
+                    <div class="snipcart-item-line__product">
+                        <div class="snipcart-item-line__header">
+                            {{ item.customFields[0].value }}
+                        </div>
+                        <div class="snipcart-item-line__content">
+                            <div v-html="item.description"></div>
+                        </div>
+                        <div class="snipcart-item-line__footer">
+                            <p>
+                                <span>Price: {{ item.price }} CHF</span> 
+                                <span>Amount: {{ item.quantity }}</span> 
+
+                                Total: {{item.price * item.quantity}} CHF</p>
+                            <button-icon
+                                icon="trash"
+                                label="Delete from cart"
+                                styling="none"
+                                @click="removeItem"
+                            >DELETE FROM CART</button-icon>
+                        </div>
+                    </div>
+                </div>
+            </item-line>
+            <summary-fees> 
+                <div class='snipcart__subtotal-footer'>
+                    <h2>Subtotal</h2>
+                    <h2>{{ summaryData.total }} CHF</h2>
+                </div>
+            </summary-fees>
+            <cart-header>
+                <div class='shop-hearder'>
+                    <close-cart-action> <h1>✕</h1> </close-cart-action>
+                    <h1 class='shop-header-title'>CHECKOUT</h1>
+                </div>
+            </cart-header>
+            <cart-summary-item> 
+                <li class="snipcart-cart-summary-item">
+                    <span class="snipcart-cart-summary-item__name snipcart__font--slim">
+                        {{ item.name }}
+                    </span>
+                    <span class="snipcart-cart-summary-item__quantity snipcart__font--slim">
+                        {{ $localize('cart_summary.quantity') }}{{ item.quantity }}
+                    </span>
+
+                    <span class="snipcart-cart-summary-item__price snipcart__font--slim">
+                        {{item.price * item.quantity}} CHF
+                    </span>
+                </li>
+            </cart-summary-item>
+        </div>
+    </body>
+</html>
