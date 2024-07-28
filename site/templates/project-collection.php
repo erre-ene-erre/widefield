@@ -14,7 +14,7 @@
               data-sizes="auto"  
               alt="<?= $slide -> alt() ?>">
           
-            <figcaption class="edition-title"><h2><?= $project -> header() -> kt() -> or($project -> title()) ?></h2></figcaption>
+            <figcaption class="edition-title"><?= $project -> header() -> kt() -> or($project -> title()) ?></figcaption>
           </figure>
         </a>
         <?php endif ?>

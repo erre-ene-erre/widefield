@@ -4,22 +4,19 @@
     <?php snippet('gallery')?>
 </div>
 
-<div class="column col-2 info">
-    <?php if($page -> edition() -> isNotEmpty()): ?>
-    <div class="square-bordered">
-        <h2><?= sprintf('%02s', $page -> edition())?></h2>
-    </div>
-    <br>
-    <?php endif ?>
-    
+<div class="column col-2 info">    
     <?= $page -> eventinfo() ->kt()?>
     <?php if($page -> moreinfo() -> isNotEmpty()): ?>
         <div class="more-info">
             <?= $page -> moreinfo() -> text() ?>
         </div>
-        <div class="read-more"><i>(Read More)</i></div>
+        <div class="read-more">(...) read more</div>
     <?php endif ?>
     <?= $page -> textbottom() ->kt()?>
+    <?php if($page->issale()->toBool() === true): ?>
+        <p>Price: <?= $page -> productPrice() ?> CHF</p>
+        <?= snippet('product/add') ?>
+    <?php endif ?>
 
     <?php snippet('project-nav') ?>
 </div>

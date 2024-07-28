@@ -2,13 +2,13 @@
     <div class="controllers">  
     <?php if ($page -> hasPrevListed()): ?>
         <div class="square-bordered button">
-            <a href="<?= $page->prevListed()->url() ?>">
+            <a class='button-link' href="<?= $page->prevListed()->url() ?>">
             <h2>PREVIOUS</h2></a>
         </div>
     <?php endif ?> 
     <?php if ($page -> hasNextListed()): ?>
         <div class="square-bordered button">
-            <a href="<?= $page->nextListed()->url() ?>">
+            <a class='button-link' href="<?= $page->nextListed()->url() ?>">
             <h2>NEXT</h2></a>
         </div>
     <?php endif ?> 

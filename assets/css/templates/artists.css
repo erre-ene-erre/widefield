@@ -10,7 +10,7 @@
 .artists-list a {
     border-bottom: solid 2px var(--main);
     padding: 0 var(--margin);
-    height: 35px;
+    height: 50px;
     text-decoration: none;
     display: flex;
     justify-content: flex-start;
@@ -19,6 +19,7 @@
 .artists-list a:last-child{
     flex-grow: 2;
     align-items: flex-start;
+    padding-top: 10px;
 }
 .artists-list a:last-child li h2 { margin-top: 15px;}
 .artists-list a:hover{background-color: var(--highlight);}

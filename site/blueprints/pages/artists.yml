@@ -1,4 +1,6 @@
 Title: Artists
+options:
+  changeTitle: false
 
 sections:
   artists:

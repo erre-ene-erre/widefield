@@ -26,11 +26,23 @@ Textbottom:
 
 ----
 
-Issale: false
+Issale: true
 
 ----
 
-Price: 
+Productid: 01
+
+----
+
+Productprice: 50
+
+----
+
+Productdescription: 
+
+----
+
+Price: 50
 
 ----
 

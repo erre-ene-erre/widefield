@@ -2,11 +2,12 @@
 </main>
 
 <footer>
+    <?= snippet('cart/init') ?>
     <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.iife.js" defer init></script>
-    <?= js('/assets/js/main.js') ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" ></script>
+    <?= js('/assets/js/main.js') ?>
     <script>
-    if(newsButton){
+    if(document.querySelector('.news-container .button')){
         if (!Cookies.get('alert')) { setTimeout(function(){
             //document.querySelector('.news-container').style.display = 'block';
             newsContainer.classList.add('shown');

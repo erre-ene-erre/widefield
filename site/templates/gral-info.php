@@ -10,7 +10,7 @@
         <div class="more-info">
             <?= $page -> moreinfo() -> text() ?>
         </div>
-        <div class="read-more">(Read More)</div>
+        <div class="read-more">(...) read more</div>
     <?php endif ?>
     <?= $page -> textbottom() ->kt()?>
 
@@ -29,7 +29,7 @@
         <?php endforeach ?>
         <?php endif ?>
         <?php if(collection('past-news') -> isNotEmpty()) :?>
-        <h2 class='subheader'>past</h2>
+        <h2 class='subheader'>past news</h2>
         <?php foreach (collection('past-news') as $newsitem): ?>
         <div class="extra-item">
             <?php if($newsitem -> image() -> isNotEmpty()): ?>
@@ -48,7 +48,7 @@
         <?php foreach(collection('all-projects') as $project): ?>
             <?php foreach ($project->artists()->split() as $artist): ?>
                 <?php if($page -> title() == $artist): ?>
-                    <div class="extra-item">
+                    <div class="extra-item related-project">
                     <a href ='<?=$project -> url() ?>'>
                     <?php snippet('column-image', ['slide' => $project -> files() -> template('media-file') -> sortBy('sort') -> first()]) ?>
                     <?= $project -> header() -> text() ?>

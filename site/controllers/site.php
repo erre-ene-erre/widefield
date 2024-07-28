@@ -2,6 +2,7 @@
     return function ($page, $site){
         $is_project_coll = $page -> template() =='project-collection';
         $is_project = $page -> template() =='project';
+        $is_media = $page -> template() =='media-file';
         $is_artists = $page -> template() == 'artists'; 
         $is_artist = $page -> parent() == 'artists'; 
         $is_info = $page -> template() == 'gral-info';
@@ -10,6 +11,7 @@
 
         return [
             'is_project' => $is_project,
+            'is_media' => $is_media,
             'is_artists' => $is_artists,
             'is_artist' => $is_artist,
             'is_info' => $is_info,

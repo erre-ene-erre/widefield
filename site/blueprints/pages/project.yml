@@ -31,13 +31,7 @@ columns:
       gralinfo:
         type: fields
         fields:
-          edition:
-            type: number
-            label: Edition Number
-            width: 1/3
-            help: optional
           artists:
-            width: 2/3
             type: multiselect
             options: query
             query: 
@@ -76,9 +70,11 @@ columns:
             text:
               - "no"
               - "yes"
-          price:
-            width: 1/2
-            type: number
-            after: CHF
-            when: 
-              issale: true
+          productinfo: cart/product
+
+          # price:
+          #   width: 1/2
+          #   type: number
+          #   after: CHF
+          #   when: 
+          #     issale: true

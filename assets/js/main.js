@@ -53,8 +53,11 @@ function showMenu() {
         if (subMenu) { subMenu.classList.remove('bordered'); }}
     }
 }
+if(mainMenu){
+window.addEventListener('scroll', debounce(showMenu));}
 
-window.addEventListener('scroll', debounce(showMenu));
+// SHOP
+
 
 // let headerMenu = document.querySelector('.header');
 // if (mobileSize.matches) {
@@ -90,7 +93,7 @@ let moreInfo = document.querySelector('.more-info');
 if(readMore){
 readMore.addEventListener('click', () => {
     moreInfo.classList.toggle('visible');
-    readMore.innerText = moreInfo.classList.contains('visible') ? '(Close)' : '(Read More)';
+    readMore.innerText = moreInfo.classList.contains('visible') ? 'Close Text' : '(...) read more';
 });
 }
 
@@ -150,21 +153,21 @@ function hideController(){
     if (galleryImgs.length == 2 && thisImg.dataset.order == 'second') { controller.style.display = 'none'; }
 }
 // lightbox gallery
-if(gallery){
-    let galleryImgs = document.querySelectorAll('.gallery-image');
-    let closeButtons = document.querySelectorAll('.gallery-image .button');
+// if(gallery){
+//     let galleryImgs = document.querySelectorAll('.gallery-image');
+//     let closeButtons = document.querySelectorAll('.gallery-image .button');
 
-    function showlightbox() { this.classList.add('lightbox');}
-    function hidelightbox() { 
-        setTimeout(() => {
-            this.parentElement.classList.remove("lightbox");
-        }, 50);  
-    }
+//     function showlightbox() { this.classList.add('lightbox');}
+//     function hidelightbox() { 
+//         setTimeout(() => {
+//             this.parentElement.classList.remove("lightbox");
+//         }, 50);  
+//     }
 
 
-    galleryImgs.forEach(image => image.addEventListener('click', showlightbox));
-    closeButtons.forEach(button => button.addEventListener('click', hidelightbox));
-}
+//     galleryImgs.forEach(image => image.addEventListener('click', showlightbox));
+//     closeButtons.forEach(button => button.addEventListener('click', hidelightbox));
+// }
 
 // MOBILE FUNCTIONS
 //---arrange layout
