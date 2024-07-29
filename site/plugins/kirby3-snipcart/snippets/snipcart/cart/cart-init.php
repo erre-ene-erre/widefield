@@ -24,6 +24,19 @@
         }
     }
     updateCheckoutButtonVisibility();
+    Snipcart.api.theme.customization.registerPaymentFormCustomization({
+      input: {
+        color: '#000',
+        border: '2px solid black',
+        fontSize: '21px',
+        fontFamily: 'Korpus A'
+      },
+      label: {
+        color: '#00',
+        fontSize: '21px',
+        fontFamily: 'Korpus A'
+      }
+    });
 
     // Listen for cart changes
     Snipcart.store.subscribe(() => { updateCheckoutButtonVisibility();});

@@ -31,9 +31,20 @@
             </item-line>
             <summary-fees> 
                 <div class='snipcart__subtotal-footer'>
-                    <h2>Subtotal</h2>
-                    <h2>{{ summaryData.total }} CHF</h2>
+                    <div class="snipcart__amount-values">
+                        <h3>Subtotal</h3>
+                        <h3>{{ summaryData.subtotal }} CHF</h3>
+                    </div>
+                    <div class="snipcart__amount-values">
+                        <h3>Shipping</h3>
+                        <h3>{{ summaryData.shippingInformation.cost }} CHF</h3>
+                    </div>
+                    <div class='snipcart__amount-values snipcart__total'>
+                        <h2>Total</h2>
+                        <h2>{{ summaryData.total }} CHF</h2>
+                    </div>
                 </div>
+                
             </summary-fees>
             <cart-header>
                 <div class='shop-hearder'>
@@ -41,6 +52,15 @@
                     <h1 class='shop-header-title'>CHECKOUT</h1>
                 </div>
             </cart-header>
+            <shipping-rates-list-item>
+                <li class="snipcart-shipping-rates-list-item">
+                    <snipcart-radio name="selectedRate" class="snipcart-shipping-rates-list-item__label--highlight" :value="slug"
+                        :id="`selectedRate-${slug}`">
+                        <span> {{ methodName }} </span>
+                    </snipcart-radio>
+                    <span class="shipping-price">{{ cost }} CHF</span>
+                </li>
+            </shipping-rates-list-item>
             <cart-summary-item> 
                 <li class="snipcart-cart-summary-item">
                     <span class="snipcart-cart-summary-item__name snipcart__font--slim">
