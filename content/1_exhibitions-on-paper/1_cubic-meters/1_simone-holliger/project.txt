@@ -6,15 +6,11 @@ Header: <h2>Simone Holliger</h2><h3>Breaking for Something to Happen, 2017</h3><
 
 ----
 
-Edition: 1
-
-----
-
 Artists: Simone Holliger
 
 ----
 
-Eventinfo: <h2><a href="/@/page/mIWEI00Kr44WRTHf">Simone Holliger</a></h2><h3>Breaking for Something to Happen, 2017</h3><p>Double sided silk printing editions, 50 x 70 cm</p><p>Material: silkscreen print, one color Cirus recycled 120 gr. <br>Dimensions: 50 x 70 cm <br>Edition: 100, stamped <br>Launch at Oraibi + Beckbooks, Geneva, Switzerland, 2017</p>
+Eventinfo: <h2><a href="/@/page/mIWEI00Kr44WRTHf">Simone Holliger</a></h2><h3>Breaking for Something to Happen, 2017</h3><p></p><p>Double sided silk printing editions, 50 x 70 cm</p><p>Material: silkscreen print, one color Cirus recycled 120 gr. <br>Dimensions: 50 x 70 cm <br>Edition: 100, stamped <br>Launch at Oraibi + Beckbooks, Geneva, Switzerland, 2017</p>
 
 ----
 
@@ -35,6 +31,10 @@ Productid: 01
 ----
 
 Productprice: 50
+
+----
+
+Edition: 1
 
 ----
 

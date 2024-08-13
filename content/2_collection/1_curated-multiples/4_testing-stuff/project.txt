@@ -1,0 +1,37 @@
+Title: Testing Stuff
+
+----
+
+Header: <p>Wall with a poster</p><p>2017</p>
+
+----
+
+Artists: Julia Znoj
+
+----
+
+Eventinfo: 
+
+----
+
+Moreinfo: 
+
+----
+
+Textbottom: 
+
+----
+
+Issale: false
+
+----
+
+Productid: 
+
+----
+
+Productprice: 
+
+----
+
+Uuid: CtYyfW2qXORPhZS1
