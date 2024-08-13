@@ -6,7 +6,7 @@
 </div>
 
 <div class="mobile-menu-button">
-    <h2>MENU</h2>
+    <h1>MENU</h1>
 </div>
 <?php if(!$page -> isHomePage()): ?>
     <section class="main menu-container">

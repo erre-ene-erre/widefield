@@ -6,7 +6,8 @@ let mobileMenuButton = document.querySelector('.mobile-menu-button');
 
 // Scrolling Menu
 let prevScrollpos = window.scrollY;
-let smallSize = window.matchMedia("(max-width: 885px)");
+let smallSize = window.matchMedia("(max-width: 935px)");
+// let mediumSize = window.matchMedia("(max-width: 885px)");
 let mobileSize = window.matchMedia("(max-width: 805px)");
 
 function debounce(func, wait = 10, immediate = true) {
@@ -24,67 +25,60 @@ function debounce(func, wait = 10, immediate = true) {
     };
 }
 
+let scrollamount = smallSize.matches ? 95 : 50;
+let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+
 function showMenu() {
-    let scrollamount = smallSize.matches ? 50 * 2 : 50;
-    let currentScrollPos = window.scrollY;
-    if (prevScrollpos > currentScrollPos) {
-        if (mobileSize.matches) { mobileMenuButton.style.top = '50px'
-        } else{
-        mainMenu.style.top = "0";
-        if (subMenu) { subMenu.style.top = `${scrollamount}px`; }}
-    } else {
-        if (mobileSize.matches) { mobileMenuButton.style.top = '0'
-        } else{
-        mainMenu.style.top = `-${scrollamount + 35}px`;
-        if (subMenu) { subMenu.style.top = `-${scrollamount}px`; }}
-    }
-    prevScrollpos = currentScrollPos;
-    if (window.scrollY > 5) {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && lastScrollTop > 0) {
         if (mobileSize.matches) {
-            mobileMenuButton.classList.add('bordered'); title.classList.add('bordered');
-        } else{
-        mainMenu.classList.add('bordered');
-        if (subMenu) { subMenu.classList.add('bordered'); }}
-    } else {
-        if (mobileSize.matches) {
-            mobileMenuButton.classList.remove('bordered'); title.classList.remove('bordered');
+            mobileMenuButton.style.top = '0'
         } else {
-        mainMenu.classList.remove('bordered');
-        if (subMenu) { subMenu.classList.remove('bordered'); }}
+            mainMenu.style.top = `-${scrollamount + 35}px`;
+            if (subMenu) { subMenu.style.top = `-${scrollamount}px`; }
+        }
+    } else if (scrollTop < lastScrollTop || lastScrollTop == -1) {
+        if (mobileSize.matches) {
+            mobileMenuButton.style.top = '50px'
+        } else {
+            mainMenu.style.top = "0";
+            if (subMenu) { subMenu.style.top = `${scrollamount}px`; }
+        }
     }
+    lastScrollTop = scrollTop;
 }
-if(mainMenu){
-window.addEventListener('scroll', debounce(showMenu));}
 
-// SHOP
-
-
-// let headerMenu = document.querySelector('.header');
-// if (mobileSize.matches) {
-//     let leftHeader = document.querySelector('.selection.left');
-//     let centerHeader = document.querySelector('.selection.center');
-//     moveEnd(centerHeader, leftHeader);
-//     // move menu on scroll
-//     let lastScrollTop = window.scrollY || document.documentElement.scrollTop;;
-//     window.onscroll = () => {
-//         let scrollTop = window.scrollY || document.documentElement.scrollTop;
-//         if (scrollTop > lastScrollTop && lastScrollTop > 0) {
-//             headerMenu.style.top = '-35%'
-//         } else if (scrollTop < lastScrollTop || lastScrollTop == -1) {
-//             headerMenu.style.top = '0'
-//         }
-//         lastScrollTop = scrollTop;
+// function showMenuV2() {
+//     let scrollamount = smallSize.matches ? 95 : 50;
+//     let currentScrollPos = window.scrollY;
+//     if (prevScrollpos > currentScrollPos) {
+//         if (mobileSize.matches) { mobileMenuButton.style.top = '50px'
+//         } else{
+//         mainMenu.style.top = "0";
+//         if (subMenu) { subMenu.style.top = `${scrollamount}px`; }}
+//     } else {
+//         if (mobileSize.matches) { mobileMenuButton.style.top = '0'
+//         } else{
+//         mainMenu.style.top = `-${scrollamount + 35}px`;
+//         if (subMenu) { subMenu.style.top = `-${scrollamount}px`; }}
 //     }
-//     //mobile grid size
-//     if (document.querySelector('.grid')) {
-//         let icons = document.querySelectorAll(".grid-item img");
-//         icons.forEach(icon => {
-//             let width = icon.style.width;
-//             let mobileWidth = parseInt(width) * 1.5;
-//             icon.style.width = `${mobileWidth}%`;
-//         });
+//     prevScrollpos = currentScrollPos;
+//     if (window.scrollY > 5) {
+//         if (mobileSize.matches) {
+//             mobileMenuButton.classList.add('bordered'); title.classList.add('bordered');
+//         } else{
+//         mainMenu.classList.add('bordered');
+//         if (subMenu) { subMenu.classList.add('bordered'); }}
+//     } else {
+//         if (mobileSize.matches) {
+//             mobileMenuButton.classList.remove('bordered'); title.classList.remove('bordered');
+//         } else {
+//         mainMenu.classList.remove('bordered');
+//         if (subMenu) { subMenu.classList.remove('bordered'); }}
 //     }
 // }
+if(mainMenu){
+window.addEventListener('scroll', debounce(showMenu));}
 
 //read more
 let readMore = document.querySelector('.read-more');
@@ -169,35 +163,66 @@ function hideController(){
 //     closeButtons.forEach(button => button.addEventListener('click', hidelightbox));
 // }
 
+// gray highlight selection 
+
+if (document.querySelector('.content.project-collection')){
+    let flexContainer = document.querySelector('.content.project-collection');
+    expandLast(flexContainer);
+}
+
+function expandLast(object) {
+    let containerWidth = object.offsetWidth
+    let lineWidth = 0;
+    if (!mobileSize.matches) {
+    for (let i = 0; i < object.children.length; i++){
+        object.children[i].classList.remove("expand");
+        lineWidth = lineWidth + object.children[i].offsetWidth;
+        if(lineWidth > containerWidth){
+            object.children[i-1].classList.add("expand");
+            lineWidth = 0;
+        }
+    }
+    }
+}
+
+
 // MOBILE FUNCTIONS
 //---arrange layout
 let selection = document.querySelector('.main-menu a.active');
+let menuButton = document.querySelector('.mobile-menu-button');
+let menuBtnText = document.querySelector('.mobile-menu-button h1');
+let inserted = false;
 
 function moveEnd(object, to) { to.append(object); }
 function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    inserted = true;
 }
 
 function changeLayout(size) {
     if (size.matches && subMenu && mainMenu) { 
         insertAfter(selection, subMenu);
-    } else {
-        // insertAfter(mainMenu, subMenu);
-    }
-}
-
-
-
-// ---show menu
-if(mobileSize.matches){
-    changeLayout(mobileSize);
-    mobileSize.onchange = changeLayout;
-
-    let menuButton = document.querySelector('.mobile-menu-button');
-    let menuBtnText = document.querySelector('.mobile-menu-button h2');
-    function menuToggle() {
-        container.classList.toggle('open');
-        container.classList.contains('open') ? menuBtnText.innerHTML = 'CLOSE' : menuBtnText.innerHTML = 'MENU';
-    }
+    } 
     menuButton.addEventListener('click', menuToggle);
+    if(inserted){
+        mainMenu.after(subMenu);
+    }
 }
+function menuToggle() {
+    container.classList.toggle('open');
+    container.classList.contains('open') ? menuBtnText.innerHTML = 'CLOSE' : menuBtnText.innerHTML = 'MENU';
+}
+if (mobileSize.matches) {changeLayout(mobileSize);}
+
+// RESIZE EVENT
+
+window.addEventListener('resize', () => {
+// ---show menu
+// if(mobileSize.matches){
+    changeLayout(mobileSize);
+// } 
+if (document.querySelector('.content.project-collection')){
+    let flexContainer = document.querySelector('.content.project-collection');
+    expandLast(flexContainer);
+}
+});

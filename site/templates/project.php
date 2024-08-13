@@ -14,7 +14,7 @@
     <?php endif ?>
     <?= $page -> textbottom() ->kt()?>
     <?php if($page->issale()->toBool() === true): ?>
-        <p>Price: <?= $page -> productPrice() ?> CHF</p>
+        <p class='price'>Price: <?= $page -> productPrice() ?> CHF</p>
         <?= snippet('product/add') ?>
     <?php endif ?>
 
