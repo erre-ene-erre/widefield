@@ -48,35 +48,6 @@ function showMenu() {
     lastScrollTop = scrollTop;
 }
 
-// function showMenuV2() {
-//     let scrollamount = smallSize.matches ? 95 : 50;
-//     let currentScrollPos = window.scrollY;
-//     if (prevScrollpos > currentScrollPos) {
-//         if (mobileSize.matches) { mobileMenuButton.style.top = '50px'
-//         } else{
-//         mainMenu.style.top = "0";
-//         if (subMenu) { subMenu.style.top = `${scrollamount}px`; }}
-//     } else {
-//         if (mobileSize.matches) { mobileMenuButton.style.top = '0'
-//         } else{
-//         mainMenu.style.top = `-${scrollamount + 35}px`;
-//         if (subMenu) { subMenu.style.top = `-${scrollamount}px`; }}
-//     }
-//     prevScrollpos = currentScrollPos;
-//     if (window.scrollY > 5) {
-//         if (mobileSize.matches) {
-//             mobileMenuButton.classList.add('bordered'); title.classList.add('bordered');
-//         } else{
-//         mainMenu.classList.add('bordered');
-//         if (subMenu) { subMenu.classList.add('bordered'); }}
-//     } else {
-//         if (mobileSize.matches) {
-//             mobileMenuButton.classList.remove('bordered'); title.classList.remove('bordered');
-//         } else {
-//         mainMenu.classList.remove('bordered');
-//         if (subMenu) { subMenu.classList.remove('bordered'); }}
-//     }
-// }
 if(mainMenu){
 window.addEventListener('scroll', debounce(showMenu));}
 

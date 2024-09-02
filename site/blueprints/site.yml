@@ -39,6 +39,10 @@ columns:
       gralinfo:
         label: General Info
         type: pages
-        status: listed
-        templatesIgnore: projects
+        sortable: false
+        status: published
+        templatesIgnore: 
+          - projects
+          - home
+          - error
         image: false

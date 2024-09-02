@@ -225,6 +225,7 @@ p a:hover, li a:hover{text-decoration: none; font-family: 'Korpus A10', serif; f
 .content.gral-info, .content.project{
     display: grid;
     grid-template-columns: 2fr 1fr;
+    border-bottom: var(--borderW) solid var(--main);
     /* gap: var(--margin); */
     padding-bottom: 0;
     min-height: auto;
@@ -781,6 +782,7 @@ html.snipcart-cart--opened .snipcart-base-button__label {margin-left: 0 !importa
         position: fixed;
         border-bottom: var(--borderW) solid var(--main);
         top: 50px;
+        background-color: var(--highlight);
     }
     .main-container.open .main.menu-container {
         margin-left: 0;
