@@ -5,6 +5,19 @@
     <a href="<?= $page->parent()->url() ?>">
     <h2>✕</h2></a>
 </div>
+<div class='big-controllers'>
+    <span class='previous'>
+        <?php if($page -> hasPrevListed()): ?>
+        <a href='<?= $page -> prevListed() -> url() ?>'></a>
+         <?php endif ?>
+    </span>
+    <span class='next'>
+         <?php if($page -> hasNextListed()): ?>
+        <a href='<?= $page -> nextListed() -> url() ?>'></a>
+         <?php endif ?>
+    </span>
+</div>
+
 <figure class='lightbox <?=$image -> orientation()?>'>
     <img loading="lazy" alt="<?= $image -> alt() ?>"
     <?php if($image ->mime() === 'image/gif'): ?>
@@ -16,7 +29,7 @@
     <?php endif ?>
     >
     <?php if($image -> caption() -> isNotEmpty()): ?>
-    <figcaption><?= $image -> caption() ?></figcaption>
+    <figcaption><?= $image -> caption() -> kt() ?></figcaption>
     <?php endif ?>
 </figure>
 

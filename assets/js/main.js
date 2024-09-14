@@ -118,6 +118,12 @@ function hideController(){
     if (galleryImgs.length == 2 && thisImg.dataset.order == 'second') { controller.style.display = 'none'; }
 }
 // lightbox gallery
+if(document.querySelector('.content.media-file')){
+    let fig = document.querySelector('figure.lightbox');
+    fig.addEventListener('click', () => {
+        fig.classList.toggle('zoomed');
+    });
+}
 // if(gallery){
 //     let galleryImgs = document.querySelectorAll('.gallery-image');
 //     let closeButtons = document.querySelectorAll('.gallery-image .button');
