@@ -6,7 +6,7 @@ Header: <h2>TILO&amp;TONI </h2><h3>Tilo und Toni grüssen aus Oberkirch und Lüt
 
 ----
 
-Edition: 2
+Flip: true
 
 ----
 
@@ -35,6 +35,10 @@ Productid: 02
 ----
 
 Productprice: 45
+
+----
+
+Edition: 2
 
 ----
 
