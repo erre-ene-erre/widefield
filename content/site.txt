@@ -1,4 +1,4 @@
-Title: Widefield - Artist Editions
+Title: Widefield
 
 ----
 
@@ -11,6 +11,10 @@ Favicon: - file://LUslM7pkE3F11FU7
 ----
 
 Cover: - file://wLJR9qCON7OiSNk1
+
+----
+
+Footer: <p>© 2024 WIDEFIELD<br><a href="mailto:contact@widefield.com">CONTACT</a><br><a href="https://instagram.com/erre.ene.erre" target="_blank">INSTAGRAM</a></p>
 
 ----
 
