@@ -144,7 +144,11 @@ if(document.querySelector('.content.media-file')){
 
 if (document.querySelector('.content.project-collection')){
     let flexContainer = document.querySelector('.content.project-collection');
+    let projects = document.querySelectorAll('.project-collection .item');
     expandLast(flexContainer);
+    window.addEventListener('load', function () {
+        if (!mobileSize.matches) {setHeight(projects);}
+    });
 }
 
 function expandLast(object) {
@@ -160,6 +164,21 @@ function expandLast(object) {
         }
     }
     }
+}
+
+function setHeight(items){
+    let maxHeight = 0;
+    items.forEach(item => {
+        let itemHeight = item.offsetHeight;
+        if (itemHeight > maxHeight) {
+            maxHeight = itemHeight;
+        }
+    });
+
+    // Set all items to the max height
+    items.forEach(item => {
+        item.style.height = maxHeight + 'px';
+    });
 }
 
 
@@ -194,12 +213,22 @@ if (mobileSize.matches) {changeLayout(mobileSize);}
 // RESIZE EVENT
 
 window.addEventListener('resize', () => {
-// ---show menu
-// if(mobileSize.matches){
     changeLayout(mobileSize);
-// } 
 if (document.querySelector('.content.project-collection')){
     let flexContainer = document.querySelector('.content.project-collection');
     expandLast(flexContainer);
 }
+if (document.querySelector('.content.project-collection')) {
+    let projects = document.querySelectorAll('.project-collection .item');
+    window.addEventListener('load', function () {
+        if (!mobileSize.matches) { setHeight(projects); }
+    });
+}
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (!sessionStorage.getItem('titleAnimationPlayed') && !mobileSize.matches) {
+        title.classList.add('animate-title');
+        sessionStorage.setItem('titleAnimationPlayed', 'true');
+    }
 });

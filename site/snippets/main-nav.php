@@ -2,7 +2,9 @@
 <?php if($is_media): ?>
 <?php else: ?>
 <div class="title <?= str_replace(' ', '-', $page -> template()) ?>">
-    <a href='<?= page('home') -> url() ?>'><h1><?= $site -> title() ?></h1></a>
+    <a href='<?= page('home') -> url() ?>'>
+        <div class='title-cont'><h1><?= $site -> title() ?></h1></div>
+    </a>
 </div>
 
 <div class="mobile-menu-button">
@@ -12,20 +14,20 @@
     <section class="main menu-container">
     <ul class="main-menu menu">
     <?php $active ?>
-    <?php foreach($site->children()->template('projects') -> listed() as $menuitem): ?>
-        <?php if($menuitem -> indexOf() == '1' ): ?>
-            <a class="<?php e($is_artists or $is_artist, 'active')?>" href ='<?= $site -> children() ->template('artists') -> listed() -> first() -> url() ?>'><li><h1><?= $site -> children() ->template('artists') -> listed() -> first() -> title() ?></h1></li></a>
-        <?php endif ?>
+    <?php foreach($site->children() -> listed() as $menuitem): ?>
         <?php 
         if($page -> parent() == $menuitem){
             $active = "active";
         } else if ($is_grandchild and $page -> parent() -> parent() == $menuitem){
             $active = "active";
         }else{$active = "dorm";}
+        if($menuitem -> template() == 'artists'){
+            $link = $menuitem -> url();
+        }else{$link = $menuitem -> children() -> listed() -> first() -> url();}
         ?>
-        <a  class=<?= $active ?> href ='<?= $menuitem -> children() -> listed() -> first() -> url() ?>'><li><h1><?= $menuitem -> title() ?></h1></li></a>
+        <a  class=<?= $active ?> href ='<?= $link ?>'><li><h1><?= $menuitem -> title() ?></h1></li></a>
     <?php endforeach ?>
-        <a class="<?php e($is_about, 'active')?>" href ='<?= $site -> children() ->template('gral-info') -> listed() -> first() -> url() ?>'><li><h1><?= $site -> children() ->template('gral-info') -> listed() -> first() -> title() ?></h1></li></a>
+        <a class="<?php e($is_about, 'active')?>" href ='<?= $site -> children() ->template('gral-info') -> first() -> url() ?>'><li><h1><?= $site -> children() ->template('gral-info') -> first() -> title() ?></h1></li></a>
         <?= snippet('cart/checkoutsummary') ?>
     </ul>
     </section>
@@ -42,7 +44,11 @@
         <a class="<?php e($page -> parent() == $menuitem, 'active')?>" href ='<?= $menuitem -> url() ?>'><li><h2><?= $menuitem -> title() ?></h2></li></a>
     <?php endforeach ?>
     <?php elseif($page -> template() == 'gral-info'): ?>
+        <?php if($page ->parents()->count() > 0 && $page -> parent() -> template() == 'artists'):?>
+        <a href='<?= $page -> parent() -> url()?>'><li class='active no-link'><h2><?= $page -> header() ->or($page -> title()) ?></h2></li></a>
+        <?php else:?>
         <li class='active no-link'><h2><?= $page -> header() ->or($page -> title()) ?></h2></li>
+        <?php endif ?>
     <?php endif ?>
     </ul>  
     </section>

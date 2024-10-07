@@ -30,19 +30,29 @@ columns:
               template: gallery-image
             max: 1
             layout: cards
+          footer:
+            type: writer
+            toolbar:
+              inline: false
+            nodes:
+              - paragraph
   - width: 1/2
     sections:
       projects:
         type: pages
-        template: projects
+        template: 
+          - projects
+          - artists
         image: false
       gralinfo:
         label: General Info
         type: pages
         sortable: false
-        status: published
+        status: unlisted
         templatesIgnore: 
           - projects
           - home
           - error
+          - artists
         image: false
+        help: Please leave as 'unlisted'

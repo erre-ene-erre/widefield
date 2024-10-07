@@ -21,6 +21,13 @@ columns:
               - 2
               - 3
             help: The Title that appears in the projects list
+          flip:
+            label: Flip image cover?
+            type: toggle
+            text:
+              - "No"
+              - "Yes"
+            help: if yes it will do it with the first two images inside the Media Files. So just be sure that they are two images and they have the same orientation, otherwise it may couse glitches.
       gallery:
         label: Media Files
         type: files
