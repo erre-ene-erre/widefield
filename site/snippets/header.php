@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="robots" content="noindex, nofollow" />
+    <!-- <meta name="robots" content="noindex, nofollow" /> -->
 
     <?php if($page->isHomePage()): ?>
     <meta property="title" content="<?= $site->title() ?>">
@@ -26,7 +26,7 @@
     <?php endif ?>
     <link rel="icon" type='image/png' href="<?= $site -> files() -> template('icon-image') ->first() ->url() ?>">
 
-    <?= css('/assets/css/index.css?v=1.2.3') ?>
+    <?= css('/assets/css/index.css?v=1.2.4') ?>
     <?= css('@auto') ?>
 </head>
 <body>

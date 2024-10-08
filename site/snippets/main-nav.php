@@ -45,7 +45,7 @@
     <?php endforeach ?>
     <?php elseif($page -> template() == 'gral-info'): ?>
         <?php if($page ->parents()->count() > 0 && $page -> parent() -> template() == 'artists'):?>
-        <a href='<?= $page -> parent() -> url()?>'><li class='active no-link'><h2><?= $page -> header() ->or($page -> title()) ?></h2></li></a>
+        <a class='active' href='<?= $page -> parent() -> url()?>'><li><h2><?= $page -> header() ->or($page -> title()) ?></h2></li></a>
         <?php else:?>
         <li class='active no-link'><h2><?= $page -> header() ->or($page -> title()) ?></h2></li>
         <?php endif ?>

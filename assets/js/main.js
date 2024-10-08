@@ -1,6 +1,7 @@
 let title = document.querySelector('.title');
 let container = document.querySelector('.main-container');
 let mainMenu = document.querySelector('.main.menu-container');
+let mainMenuEl = document.querySelector('.main.menu-container .main-menu');
 let subMenu = document.querySelector('.sub.menu-container');
 let mobileMenuButton = document.querySelector('.mobile-menu-button');
 
@@ -187,26 +188,27 @@ let menuButton = document.querySelector('.mobile-menu-button');
 let menuBtnText = document.querySelector('.mobile-menu-button h1');
 let inserted = false;
 
-function moveEnd(object, to) { to.append(object); }
-function insertAfter(referenceNode, newNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-    inserted = true;
-}
-
 function changeLayout(size) {
     if (size.matches && subMenu && mainMenu) { 
-        insertAfter(selection, subMenu);
-    } 
-    menuButton.addEventListener('click', menuToggle);
-    if(inserted){
-        mainMenu.after(subMenu);
+        if(!inserted){
+            selection.after(subMenu.querySelector('.sub-menu'));
+            inserted = true;
+        }
+    } else{
+        if(inserted){
+            console.log(subMenu);
+            subMenu.appendChild(document.querySelector('.sub-menu'));
+            inserted = false;
+        }
     }
 }
+menuButton.addEventListener('click', menuToggle);
 function menuToggle() {
     container.classList.toggle('open');
     container.classList.contains('open') ? menuBtnText.innerHTML = 'CLOSE' : menuBtnText.innerHTML = 'MENU';
 }
-if (mobileSize.matches) {changeLayout(mobileSize);}
+changeLayout(mobileSize);
+mobileSize.addEventListener('change', changeLayout);
 
 // RESIZE EVENT
 
