@@ -48,9 +48,18 @@
         <?php foreach(collection('all-projects') as $project): ?>
             <?php foreach ($project->artists()->split() as $artist): ?>
                 <?php if($page -> title() == $artist): ?>
+                    <?php
+                        $itis;
+                        foreach ($project -> files() -> template('media-file') as $imgfile) {
+                            if($artist == $imgfile -> artistsfeat()){$coverimage = $imgfile;}
+                        }
+                        if(empty($coverimage)){
+                        $coverimage = $project -> files() -> template('media-file') -> sortBy('sort') -> first(); 
+                        }
+                    ?>
                     <div class="extra-item related-project">
                     <a href ='<?=$project -> url() ?>'>
-                    <?php snippet('column-image', ['slide' => $project -> files() -> template('media-file') -> sortBy('sort') -> first()]) ?>
+                    <?php snippet('column-image', ['slide' => $coverimage]) ?>
                     <?= $project -> header() -> text() ?>
                     </a>
                     </div>

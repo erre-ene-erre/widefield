@@ -12,3 +12,9 @@ fields:
     label: alt text
     type: text
     help: description for screen readers (accessibility)
+  artistsfeat:
+    type: select
+    label: Artist
+    options: query
+    query: 
+      fetch: file.parent.artists.split(',')

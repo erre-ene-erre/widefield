@@ -126,7 +126,7 @@ p a:hover, li a:hover{text-decoration: none; font-family: 'Korpus A10', serif; f
 }
 
 .main-container > * { background-color: var(--background);}
-.main-container.artists {border-bottom: solid var(--borderW) var(--main); min-height: calc(100vh + var(--borderW));}
+.main-container.artists {min-height: calc(100vh + var(--borderW));}
 
 /* Title */
 .title {
@@ -248,7 +248,7 @@ p a:hover, li a:hover{text-decoration: none; font-family: 'Korpus A10', serif; f
     min-height: calc(100vh - 85px); 
     margin-left: 50px;
     padding-top: 85px;
-    padding-bottom: 35px;
+    /* padding-bottom: 35px; */
     overscroll-behavior: none;
 }
 /* ---GRID LAYOUT */
@@ -439,6 +439,7 @@ h3.edition-title{margin-top: 0;}
     border-left: var(--borderW) solid var(--main);
     margin-top: -2px;
     margin-left: -2px;
+    height: fit-content;
     /* height: 710px; */
     /* max-height: 710px; */
     text-decoration: none;
@@ -454,8 +455,8 @@ h3.edition-title{margin-top: 0;}
     margin: 0;
     position: relative;
     padding: var(--margin);
-    height: 100%;
-    /* height: fit-content; */
+    /* height: 100%; */
+    height: fit-content;
     gap: var(--margin);
     display: flex;
     flex-direction: column;
@@ -484,6 +485,7 @@ h3.edition-title{margin-top: 0;}
 .footer {
     margin-left: 50px;
     padding: 45px 15px;
+    /* border-top: 2px solid; */
 }
 .footer *{font-family: 'Korpus Grotesk', sans-serif; font-size: 1.5rem; margin: 0;}
 .footer a{text-decoration: none;}
@@ -893,8 +895,9 @@ html.snipcart-cart--opened .snipcart-base-button__label {margin-left: 0 !importa
     }
     .content.gral-info .extra-item:last-of-type { border: none;}
     .content.media-file .lightbox { height: fit-content;}
-    .gallery-controllers{ bottom: -1%; font-size: 1rem;}
+    .gallery-controllers{ font-size: 1rem;}
     .caption{padding-left: 0; padding-top: 0;}
+    .caption * {max-width: 85%; float: right;}
     .gallery-controllers .prev{margin-right: var(--margin);}
     .content.artists .artists-list li {padding: 8px 0;}
     .content.artists .artists-list a {height: fit-content; min-height: 50px;}

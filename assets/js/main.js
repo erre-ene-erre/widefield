@@ -4,6 +4,20 @@ let mainMenu = document.querySelector('.main.menu-container');
 let subMenu = document.querySelector('.sub.menu-container');
 let mobileMenuButton = document.querySelector('.mobile-menu-button');
 
+// footer border
+let content = document.querySelector('.content');
+let footer = document.querySelector('.footer');
+if (content.classList.contains('home')){}else{
+    setTimeout(() => {
+        console.log(content.offsetHeight, window.innerHeight);
+        if (content.offsetHeight >= window.innerHeight) {
+            console.log('taller');
+        } else {
+            footer.style.borderTop = 'solid 2px black'
+        }
+    }, 500);
+}
+
 // Scrolling Menu
 let prevScrollpos = window.scrollY;
 let smallSize = window.matchMedia("(max-width: 935px)");
@@ -124,22 +138,6 @@ if(document.querySelector('.content.media-file')){
         fig.classList.toggle('zoomed');
     });
 }
-// if(gallery){
-//     let galleryImgs = document.querySelectorAll('.gallery-image');
-//     let closeButtons = document.querySelectorAll('.gallery-image .button');
-
-//     function showlightbox() { this.classList.add('lightbox');}
-//     function hidelightbox() { 
-//         setTimeout(() => {
-//             this.parentElement.classList.remove("lightbox");
-//         }, 50);  
-//     }
-
-
-//     galleryImgs.forEach(image => image.addEventListener('click', showlightbox));
-//     closeButtons.forEach(button => button.addEventListener('click', hidelightbox));
-// }
-
 // gray highlight selection 
 
 if (document.querySelector('.content.project-collection')){

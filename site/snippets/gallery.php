@@ -46,7 +46,9 @@
             data-srcset="<?= $image -> srcset() ?>"
             data-sizes="auto" 
             alt="<?= $image -> alt() ?>">
-        <figcaption class="caption"><?= $image -> caption() -> kt() ?></figcaption>
+        <figcaption class="caption">
+            <?= $image -> caption() -> kt() ?>
+        </figcaption>
         <?php if($lightbox): ?>    
         </a>
         <?php endif ?>

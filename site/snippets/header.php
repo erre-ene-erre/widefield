@@ -26,7 +26,7 @@
     <?php endif ?>
     <link rel="icon" type='image/png' href="<?= $site -> files() -> template('icon-image') ->first() ->url() ?>">
 
-    <?= css('/assets/css/index.css?v=1.2.2') ?>
+    <?= css('/assets/css/index.css?v=1.2.3') ?>
     <?= css('@auto') ?>
 </head>
 <body>
