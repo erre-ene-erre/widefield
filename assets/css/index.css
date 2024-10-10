@@ -705,6 +705,9 @@ html.snipcart-cart--opened .snipcart-featured-payment-methods--no-background {ma
 html.snipcart-cart--opened .snipcart-base-button__icon {display: none;}
 html.snipcart-cart--opened .snipcart-base-button__label {margin-left: 0 !important; padding: 5px; font-family: 'Korpus Grotesk';}
 
+/* THANK YOU MESSAGE */
+.snipcart-order__details { max-width: none;}
+.snipcart-order__box .snipcart__icon {display: none;}
 
 /* ------ MEDIA QUERIES --------- */
 /* small desktop screen (1 item) */
