@@ -196,7 +196,6 @@ function changeLayout(size) {
         }
     } else{
         if(inserted){
-            console.log(subMenu);
             subMenu.appendChild(document.querySelector('.sub-menu'));
             inserted = false;
         }
@@ -214,16 +213,22 @@ mobileSize.addEventListener('change', changeLayout);
 
 window.addEventListener('resize', () => {
     changeLayout(mobileSize);
-if (document.querySelector('.content.project-collection')){
-    let flexContainer = document.querySelector('.content.project-collection');
-    expandLast(flexContainer);
-}
-if (document.querySelector('.content.project-collection')) {
-    let projects = document.querySelectorAll('.project-collection .item');
-    window.addEventListener('load', function () {
-        if (!mobileSize.matches) { setHeight(projects); }
-    });
-}
+    scrollamount = smallSize.matches ? 95 : 50;
+    if (document.querySelector('.content.project-collection')){
+        let flexContainer = document.querySelector('.content.project-collection');
+        let projects = document.querySelectorAll('.project-collection .item');
+        expandLast(flexContainer);
+        if (!mobileSize.matches) { 
+            setHeight(projects); 
+        }
+        // setHeight(projects);
+    }
+// if (document.querySelector('.content.project-collection')) {
+//     let projects = document.querySelectorAll('.project-collection .item');
+//     window.addEventListener('load', function () {
+//         if (!mobileSize.matches) { setHeight(projects); }
+//     });
+// }
 });
 
 document.addEventListener("DOMContentLoaded", function () {

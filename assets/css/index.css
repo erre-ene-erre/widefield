@@ -155,18 +155,19 @@ p a:hover, li a:hover{text-decoration: none; font-family: 'Korpus A10', serif; f
  /* Keyframe Animation */
  @keyframes slideUp {
      0% {transform: translateY(-200%);}
-     100% { transform: translateY(61%); }}
+     100% { transform: translateY(65%); }}
 @keyframes fadeOut {
      0% {opacity: 1;}
      80% { opacity: 1;}
      100% {opacity: 0;}}
 
-.animate-title h1 { animation: slideUp 5s ease-in-out forwards;}
+.animate-title h1 { animation: slideUp 9s ease-in-out forwards;}
 .animate-title h1::after {
-    content: ' - ARTIST EDITION';
+    content: '  — ARTIST EDITIONS';
+    padding-top: 10px;
     white-space: nowrap;
     opacity: 1;
-    animation: fadeOut 5s ease-in-out forwards;
+    animation: fadeOut 9s ease-in-out forwards;
     display: inline-block;
 }
 
@@ -855,7 +856,9 @@ html.snipcart-cart--opened .snipcart-base-button__label {margin-left: 0 !importa
     .sub-menu.menu a:last-child {border-right: none; border-bottom: 2px solid var(--main);}
     .menu .no-link {border-bottom:var(--borderW) solid var(--main);}
     .content{margin-left: 0; padding-top: 100px;}
-    .content.project-collection .item{min-width: auto; width: 51%; height: auto; max-height: fit-content;}
+    .content.project-collection .item{min-width: auto; 
+        width: 100%; 
+        height: auto !important; max-height: fit-content;}
     .content .col-2{margin-top: 0; border-left: none; min-height: fit-content; padding-top: var(--margin); flex-grow: 1;}
     .content.gral-info .col-2 {padding-bottom: 0;}
     /* .content .col-2 .controllers{position: fixed;} */
