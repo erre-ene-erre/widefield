@@ -6,7 +6,11 @@ Header: <p>Wall with a poster</p><p>2017</p>
 
 ----
 
-Artists: Julia Znoj
+Flip: false
+
+----
+
+Artists: Julia Znoj, Daniel V. Keller, Rodrigo Nava Ramirez, Jānis Dzirnieks
 
 ----
 
