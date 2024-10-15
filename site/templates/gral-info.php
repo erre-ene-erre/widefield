@@ -49,12 +49,17 @@
             <?php foreach ($project->artists()->split() as $artist): ?>
                 <?php if($page -> title() == $artist): ?>
                     <?php
-                        $itis;
+                        $coverimage = null;
                         foreach ($project -> files() -> template('media-file') as $imgfile) {
-                            if($artist == $imgfile -> artistsfeat()){$coverimage = $imgfile;}
+                            foreach ($imgfile -> artistsfeat() -> split() as $feature) {
+                                if($artist == $feature){
+                                    $coverimage = $imgfile;
+                                    break;
+                                }
+                            }
                         }
                         if(empty($coverimage)){
-                        $coverimage = $project -> files() -> template('media-file') -> sortBy('sort') -> first(); 
+                            $coverimage = $project -> files() -> template('media-file') -> sortBy('sort') -> first(); 
                         }
                     ?>
                     <div class="extra-item related-project">

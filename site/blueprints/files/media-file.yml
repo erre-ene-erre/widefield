@@ -13,7 +13,7 @@ fields:
     type: text
     help: description for screen readers (accessibility)
   artistsfeat:
-    type: select
+    type: multiselect
     label: Artist
     options: query
     query: 
