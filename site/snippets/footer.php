@@ -2,7 +2,7 @@
 </main>
 
 <footer>
-    <?php if($page -> isHomePage()): ?>
+    <?php if($page -> isHomePage() or $is_media): ?>
     <?php else: ?>
         <section class='footer'>
             <div class='footer-content'>

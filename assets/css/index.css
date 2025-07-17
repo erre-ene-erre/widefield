@@ -377,6 +377,7 @@ h3.edition-title{margin-top: 0;}
     position: absolute;
     height: 100vh;
     margin-left: 0;
+    padding-top: 0;
 }
 .content.media-file .square-bordered.button{position: fixed; z-index: 2; right: 0; top: 0; margin: var(--margin); padding: 5px;}
 .content.media-file .lightbox-controllers {
@@ -387,7 +388,7 @@ h3.edition-title{margin-top: 0;}
 }
 .content.media-file .lightbox-controllers span {display: inline-block; min-width: var(--margin);}
 .content.media-file .lightbox-controllers a {text-decoration: none;}
-.content.media-file .lightbox{ position: relative; height: calc(100% - 30px); margin: var(--margin);margin-bottom: 0; cursor: zoom-in;}
+.content.media-file .lightbox{ position: relative; height: calc(100% - 45px); margin: var(--margin);margin-bottom: 0; cursor: zoom-in;}
 .content.media-file .lightbox.zoomed{transform: scale(2); cursor: zoom-out;}
 .content.media-file .lightbox img {max-height: 100%; max-width: 100%;}
 .content.media-file .lightbox figcaption {font-size: 0.8rem; text-align: right; margin-top: 10px;}
