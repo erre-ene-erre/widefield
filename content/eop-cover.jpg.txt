@@ -1,5 +1,0 @@
-Uuid: wLJR9qCON7OiSNk1
-
-----
-
-Template: gallery-image
