@@ -1,40 +1,22 @@
 {
-  "name": "getkirby/plainkit",
-  "description": "Kirby Plainkit",
-  "type": "project",
-  "keywords": [
-    "kirby",
-    "cms",
-    "starterkit"
-  ],
-  "authors": [
-    {
-      "name": "Rodrigo Nava Ramirez",
-      "email": "email@rodrigonava.mx",
-      "homepage": "https://rodrigonava.mx"
-    }
-  ],
-  "homepage": "https://getkirby.com",
-  "support": {
-    "email": "support@getkirby.com",
-    "issues": "https://github.com/getkirby/starterkit/issues",
-    "forum": "https://forum.getkirby.com",
-    "source": "https://github.com/getkirby/starterkit"
-  },
-  "require": {
-    "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
-    "getkirby/cms": "^4.0"
-  },
-  "config": {
-    "allow-plugins": {
-      "getkirby/composer-installer": true
+    "name": "erre-ene-erre/widefield",
+    "description": "Custom website for Widefield",
+    "type": "project",
+    "require": {
+        "getkirby/cms": "^5.0",
+        "hashandsalt/kirby3-snipcart": "^0.5.0"
     },
-    "optimize-autoloader": true
-  },
-  "scripts": {
-    "start": [
-      "Composer\\Config::disableProcessTimeout",
-      "@php -S localhost:8000 kirby/router.php"
-    ]
-  }
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rodrigo Nava Ramirez",
+            "email": "email@rodrigonava.mx"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "getkirby/composer-installer": true
+        }
+    }
 }

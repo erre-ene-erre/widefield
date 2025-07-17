@@ -1,37 +1,26 @@
 type: group
-when: 
-  issale: true
 fields:
   productTotal:
-    type: productTotal
-  # productName:
-  #   label: Name
-  #   type: text
-  #   required: true
+    type: producttotal
+  productName:
+    label: Name
+    type: text
+    required: true
   productID:
     label: Product ID
-    width: 1/2
     type: text
-    # required: true
-    help: This is for shop management, nothing complex, but please keep in mind that numbers shouldn't repeat.
+    required: true
   productPrice:
     label: Price
     type: number
-    width: 1/2
-    after: CHF
     step: .01
-  # productDescription:
-  #   label: Description
-  #   type: writer
-  #   toolbar:
-  #     inline: false
-  #   marks:
-  #     - bold
-  #     - italic
-  #   nodes:
-  #     - heading
-  #     - quote
-  #   headings:
-  #     - 2
-  #     - 3
-  #   help: The Title that appears in the projects list
+    required: true
+  productDescription:
+    label: Description
+    type: text
+    required: true
+  productImage:
+    label: Image
+    type: files
+    max: 1
+    required: true

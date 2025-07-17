@@ -1,5 +1,6 @@
-<div class="snipcart-checkout-box hidden">
-  <button class="snipcart-checkout">
-    <h1>Checkout</h1>
-  </button>
+<div class="snipcart-checkout-box">
+  <button class="snipcart-checkout">Checkout</button>
+  <div class="snipcart-items">
+    <span class="snipcart-items-count"></span>
+  </div>
 </div>

@@ -1,10 +1,9 @@
-<button class="snipcart-add-item square-bordered button"
+<button class="snipcart-add-item <?= $class ?>"
   data-item-id="<?= $page->ProductID() ?>"
-  data-item-custom1-name='Type'
-  data-item-custom1-value='<?= $page -> parent() -> title()?>'
   data-item-price="<?= $page->ProductPrice() ?>"
   data-item-url="<?= Url::path($page->url(), true, false); ?>"
-  data-item-description="<?= $page->header() -> kt() ?>"
-  data-item-name="<?= $page->title() ?>">
-  ADD TO CART
+  data-item-description="<?= $page->ProductDescription() ?>"
+  data-item-image="<?= Url::path($page->ProductImage()->toFile()->url(), true, false); ?>"
+  data-item-name="<?= $page->ProductName() ?>">
+  Add to cart
 </button>
